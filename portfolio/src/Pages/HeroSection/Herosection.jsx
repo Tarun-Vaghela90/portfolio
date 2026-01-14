@@ -56,8 +56,6 @@ export default function Herosection() {
               lg:w-80 lg:h-80
               object-cover
               rounded-2xl
-              border border-border
-              shadow-lg
             "
           />
         </div>
