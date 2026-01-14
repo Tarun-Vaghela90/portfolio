@@ -36,7 +36,7 @@ export default function Herosection() {
             </a>
 
             <a
-              download
+              download="Tarun_Vaghela_Resume.pdf"
               href={Resume}
               className="border border-border px-5 md:px-6 py-2.5 md:py-3 rounded-md hover:bg-muted transition"
             >
