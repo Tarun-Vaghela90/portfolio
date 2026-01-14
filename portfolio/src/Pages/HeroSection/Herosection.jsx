@@ -1,4 +1,4 @@
-import imageself from "../../assets/imageself.png";
+import imageself from "../../assets/profile.png";
 import Resume from "../../assets/Tarun_Resume.pdf";
 
 export default function Herosection() {
