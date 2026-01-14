@@ -1,0 +1,42 @@
+# =========================
+# Custom / Sensitive Files
+# =========================
+ColorsPalte.md
+.env
+.env.local
+.env.development
+.env.production
+
+# Notes, drafts, private docs
+*.md.private
+private-notes/
+secrets/
+
+# =========================
+# Vite / React
+# =========================
+node_modules/
+dist/
+.cache/
+
+# =========================
+# Logs
+# =========================
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# =========================
+# OS / Editor junk
+# =========================
+.DS_Store
+Thumbs.db
+*.swp
+*.log
+.vscode/
+.idea/
+
+# =========================
+# Build tools
+# =========================
+.eslintcache
