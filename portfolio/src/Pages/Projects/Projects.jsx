@@ -5,6 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function Projects() {
   const projects = [
@@ -12,59 +13,66 @@ export default function Projects() {
       title: "Admission Registration Portal",
       description:
         "Full-stack MERN application with admin panel, document uploads, and application tracking.",
-      tech: "React • Node • MongoDB",
-      image: "/project1.png",
+      tech: "React • Node • MongoDB • Express ",
+      github: "https://github.com/Tarun-Vaghela90/Admission-Registration-Portal",
     },
     {
-      title: "College Finder App",
+      title: "AI Powered Personal Expense Tracker",
       description:
-        "Search and explore colleges using Maps API with responsive UI.",
-      tech: "React • Tailwind • API",
-      image: "/project2.png",
+        "Smart expense tracking app with AI-based spending insights using Gemini API.",
+      tech: "React • Node • MongoDB • Gemini API",
+      github: "https://github.com/Tarun-Vaghela90/AI-Powered-Personal-Expense-Tracker",
     },
     {
-      title: "Admin Dashboard",
+      title: "Taskflow - Task Management App",
       description:
-        "Analytics dashboard with charts, tables, and role-based access.",
-      tech: "React • shadcn",
-      image: "/project3.png",
+        "Kanban-style task manager with drag-and-drop workflow and SQL-backed persistence.",
+      tech: "React • Express • Sequelize • SQL",
+      github: "https://github.com/Tarun-Vaghela90/taskflow",
     },
     {
-      title: "Portfolio Website",
+      title: "Towntrade",
       description:
-        "Dark-mode developer portfolio built with shadcn and Tailwind.",
-      tech: "React • Tailwind",
-      image: "/project4.png",
-    },
-    {
-      title: "Task Management App",
-      description:
-        "Kanban-style task manager with drag-and-drop workflow.",
+        "OLX-like marketplace platform for listing and selling second-hand items.",
       tech: "React • MERN",
-      image: "/project5.png",
+      github: "https://github.com/Tarun-Vaghela90/towntrade",
     },
   ];
 
   return (
-    <section className="py-20 bg-background">
-      {/* SECTION HEADER (NORMAL WIDTH) */}
-      <div className="max-w-7xl mx-auto px-6 mb-10">
-        <h2 className="text-3xl md:text-4xl font-bold">
-          Featured <span className="text-primary">Projects</span>
-        </h2>
-      </div>
+    <section className="py-20 bg-background text-foreground">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* HEADER */}
+        <div className="mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Featured <span className="text-primary">Projects</span>
+          </h2>
+          <p className="mt-2 max-w-xl text-muted-foreground">
+            A curated selection of projects highlighting my frontend and
+            full-stack development experience.
+          </p>
+        </div>
 
-      {/* SCROLL AREA (EDGE-LESS, NO LINES, NO BOX) */}
-      <div className="relative">
-        <div className="overflow-hidden">
+        {/* SCROLL WRAPPER */}
+        <div className="relative">
+          {/* LEFT FADE */}
+          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-8 bg-gradient-to-r from-background/90 via-background/60 to-transparent" />
+
+          {/* RIGHT FADE */}
+          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-8 bg-gradient-to-l from-background/90 via-background/60 to-transparent" />
+
+          {/* SCROLL AREA */}
           <div
             className="
-              flex gap-8
+              flex gap-6
               overflow-x-auto
               scroll-smooth
-              px-6
-              pb-6
-              -mx-6
+              snap-x snap-mandatory
+              pb-4
+              px-2
+              pr-10
+              scroll-pl-2
+              scroll-pr-10
               [&::-webkit-scrollbar]:hidden
             "
           >
@@ -72,26 +80,22 @@ export default function Projects() {
               <Card
                 key={index}
                 className="
-                  min-w-[90%]
-                  sm:min-w-[60%]
-                  md:min-w-[45%]
-                  lg:min-w-[32%]
-                  xl:min-w-[24%]
+                  flex-none
+                  snap-start
+                  w-[85%]
+                  md:w-[50%]
+                  lg:w-[33.333%]
+                  xl:w-[25%]
                   bg-card
-                  border-border
+                  border border-border
+                  transition-all
                   hover:bg-muted
-                  transition
+                  hover:shadow-lg
+                  flex flex-col
                 "
               >
-                {/* IMAGE */}
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="h-52 w-full object-cover rounded-t-lg border-b border-border"
-                />
-
-                <CardHeader>
-                  <CardTitle className="text-foreground">
+                <CardHeader className="space-y-1">
+                  <CardTitle className="text-lg line-clamp-1">
                     {project.title}
                   </CardTitle>
                   <CardDescription className="text-muted-foreground">
@@ -99,10 +103,22 @@ export default function Projects() {
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                <CardContent className="flex flex-col flex-1">
+                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
+
+                  <div className="mt-auto pt-4">
+                    <Button variant="outline" className="w-full" asChild>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Source
+                      </a>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
