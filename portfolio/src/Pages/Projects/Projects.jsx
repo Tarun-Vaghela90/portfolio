@@ -40,7 +40,7 @@ export default function Projects() {
   ];
 
   return (
-    <section className="py-20 bg-background text-foreground h-screen border border-amber-50">
+    <section className="py-20 bg-background text-foreground h-screen">
       <div className="max-w-7xl mx-auto px-6">
         {/* HEADER */}
         <div className="mb-10">
