@@ -3,7 +3,7 @@ import Resume from "../../assets/Tarun_Resume.pdf";
 
 export default function Herosection() {
   return (
-    <section className="min-h-screen bg-background text-foreground flex items-center border border-amber-50">
+    <section className="min-h-screen bg-background text-foreground flex items-center">
       <div
         className="
           max-w-6xl mx-auto px-6
