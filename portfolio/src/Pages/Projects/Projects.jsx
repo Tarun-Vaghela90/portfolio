@@ -9,36 +9,38 @@ import { Button } from "@/components/ui/button";
 
 export default function Projects() {
   const projects = [
-    {
-      title: "Admission Registration Portal",
-      description:
-        "Full-stack MERN application with admin panel, document uploads, and application tracking.",
-      tech: "React • Node • MongoDB • Express",
-      github: "https://github.com/Tarun-Vaghela90/Admission-Registration-Portal",
-    },
-    {
-      title: "AI Powered Personal Expense Tracker",
-      description:
-        "Smart expense tracking app with AI-based spending insights using Gemini API.",
-      tech: "React • Node • MongoDB • Gemini API",
-      github:
-        "https://github.com/Tarun-Vaghela90/AI-Powered-Personal-Expense-Tracker",
-    },
-    {
-      title: "Taskflow – Task Management App",
-      description:
-        "Kanban-style task manager with drag-and-drop workflow and SQL-backed persistence.",
-      tech: "React • Express • Sequelize • SQL",
-      github: "https://github.com/Tarun-Vaghela90/taskflow",
-    },
-    {
-      title: "Towntrade",
-      description:
-        "OLX-like marketplace platform for listing and selling second-hand items.",
-      tech: "React • MERN",
-      github: "https://github.com/Tarun-Vaghela90/towntrade",
-    },
-  ];
+  {
+    title: "Admission Registration Portal",
+    description:
+      "Developed a full-stack MERN application focusing on authentication, admin workflows, document uploads, and application status tracking.",
+    tech: "React • Node.js • Express • MongoDB",
+    github:
+      "https://github.com/Tarun-Vaghela90/Admission-Registration-Portal",
+  },
+  {
+    title: "AI Powered Personal Expense Tracker",
+    description:
+      "Built an expense tracking application with AI-based spending insights using the Gemini API and MongoDB for data storage.",
+    tech: "React • Node.js • MongoDB • Gemini API",
+    github:
+      "https://github.com/Tarun-Vaghela90/AI-Powered-Personal-Expense-Tracker",
+  },
+  {
+    title: "Taskflow – Task Management App",
+    description:
+      "Created a Kanban-style task management system with role-based access and SQL-backed persistence using REST APIs.",
+    tech: "React • Node.js • Express • Sequelize • SQL",
+    github: "https://github.com/Tarun-Vaghela90/taskflow",
+  },
+  {
+    title: "Towntrade",
+    description:
+      "Implemented a marketplace platform for listing and managing second-hand products with user authentication and basic search features.",
+    tech: "React • Node.js • Express • MongoDB",
+    github: "https://github.com/Tarun-Vaghela90/towntrade",
+  },
+];
+
 
   return (
     <section className="bg-background text-foreground py-14 md:py-20">

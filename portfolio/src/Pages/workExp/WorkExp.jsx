@@ -5,66 +5,101 @@ import { Calendar, MapPin, Briefcase } from "lucide-react";
 
 const companyExpCard = [
   {
-    CompanyName: "Wings Tech Solution",
-    logo: "#",
-    SkillBadge: ["AngularJs", "PHP", "Vue", "SQL"],
-    Role: "Jr.Software Engineer",
+    CompanyName: "Wings Tech Solutions Pvt. Ltd.",
+    Role: "Junior Software Engineer",
+    EmploymentType: "Full-Time",
     StartDate: "01/10/2025",
     EndDate: "Present",
-    EmploymentType: "Full-Time",
     Location: "Rajkot",
     LocationType: "On-Site",
-    Description: "",
+    SkillBadge: ["AngularJS", "PHP", "SQL", "REST APIs"],
+
+    Description:
+      "Working on enterprise web applications, handling bug fixes, feature enhancements, and client-requested updates in AngularJS and PHP-based systems. Collaborating with senior developers to understand existing codebases, ensure stability, and deliver reliable production changes.",
+
     Projects: [],
   },
+
   {
-    CompanyName: "Wings Tech Solution",
-    logo: "#",
-    SkillBadge: ["React", "Express", "Node", "SQL", "MongoDB", "Sequelize", "Redux"],
-    Role: "React/Node Developer",
+    CompanyName: "Wings Tech Solutions Pvt. Ltd.",
+    Role: "Software Engineer Trainee (React & Node)",
+    EmploymentType: "Trainee",
     StartDate: "01/07/2025",
     EndDate: "30/09/2025",
-    EmploymentType: "Trainee",
     Location: "Rajkot",
     LocationType: "On-Site",
-    Description: "",
+    SkillBadge: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "SQL",
+      "Sequelize",
+      "Redux",
+      "JWT",
+    ],
+
+    Description:
+      "Completed structured training focused on modern full-stack development using React and Node.js. Built multiple MERN-based applications to understand authentication, RESTful APIs, state management, database design, and role-based access control.",
+
     Projects: [
       {
         name: "Task Management System",
-        TechStack: ["React", "Express", "Node", "Sequelize", "SQL", "Redux"],
+        summary:
+          "Developed a Kanban-style task management system with role-based access, REST APIs, and SQL-backed persistence.",
+        TechStack: ["React", "Node.js", "Express", "Sequelize", "SQL", "Redux"],
       },
       {
-        name: "TownTrade - OLX Like",
-        TechStack: ["React", "Express", "Node", "MongoDB", "Redux"],
+        name: "TownTrade – OLX-like Marketplace",
+        summary:
+          "Built a full-stack marketplace platform with user authentication, product listings, and MongoDB-based data modeling.",
+        TechStack: ["React", "Node.js", "Express", "MongoDB", "Redux"],
       },
       {
-        name: "AI Rag Chatbot",
-        TechStack: ["React", "Express", "Node", "MongoDB", "MongoDB Vector Search", "GeminiApi Embedding", "Redis"],
+        name: "AI RAG Chatbot",
+        summary:
+          "Implemented an AI-powered chatbot using embeddings and vector search for document-based question answering.",
+        TechStack: [
+          "React",
+          "Node.js",
+          "MongoDB",
+          "MongoDB Vector Search",
+          "Gemini API",
+          "Redis",
+        ],
       },
     ],
   },
 ];
 
 export default function WorkExp() {
-  // Convert date string (DD/MM/YYYY) to "Month YYYY" format
   const formatDate = (dateString) => {
     if (dateString === "Present") return "Present";
-    
-    const [day, month, year] = dateString.split('/');
+
+    const [day, month, year] = dateString.split("/");
     const date = new Date(year, month - 1, day);
-    
+
     const monthNames = [
-      "January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
     ];
-    
+
     return `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
   };
 
   return (
     <section className="min-h-screen bg-background text-foreground py-20">
       <div className="max-w-6xl mx-auto px-6">
-
         {/* Header */}
         <div className="mb-12 text-center">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
@@ -89,7 +124,6 @@ export default function WorkExp() {
               "
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                
                 {/* Left Side - Company & Role Info */}
                 <div>
                   {/* Company Header */}
@@ -102,7 +136,7 @@ export default function WorkExp() {
                         {exp.CompanyName}
                       </p>
                     </div>
-                    
+
                     {/* Employment Badge */}
                     <Badge variant="outline" className="self-start">
                       {exp.EmploymentType}
@@ -111,13 +145,20 @@ export default function WorkExp() {
 
                   {/* Meta Information */}
                   <div className="flex flex-col gap-3 text-sm text-muted-foreground">
+                    <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+                      {exp.Description}
+                    </p>
                     <div className="flex items-center gap-2">
                       <Calendar className="w-4 h-4" />
-                      <span>{formatDate(exp.StartDate)} - {formatDate(exp.EndDate)}</span>
+                      <span>
+                        {formatDate(exp.StartDate)} - {formatDate(exp.EndDate)}
+                      </span>
                     </div>
                     <div className="flex items-center gap-2">
                       <MapPin className="w-4 h-4" />
-                      <span>{exp.Location} ({exp.LocationType})</span>
+                      <span>
+                        {exp.Location} ({exp.LocationType})
+                      </span>
                     </div>
                   </div>
 
@@ -167,7 +208,11 @@ export default function WorkExp() {
                             <div className="flex items-start justify-between mb-3">
                               <h5 className="font-bold text-foreground text-sm group-hover:text-primary transition-colors">
                                 {project.name}
+                                <p className="text-xs text-muted-foreground mt-1">
+                                  {project.summary}
+                                </p>
                               </h5>
+
                               <div className="h-2 w-2 rounded-full bg-primary/60 group-hover:bg-primary transition-colors flex-shrink-0 mt-1"></div>
                             </div>
                             <div className="flex flex-wrap gap-1.5">
@@ -187,12 +232,10 @@ export default function WorkExp() {
                     </div>
                   )}
                 </div>
-
               </div>
             </Card>
           ))}
         </div>
-
       </div>
     </section>
   );
