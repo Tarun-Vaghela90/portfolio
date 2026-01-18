@@ -21,10 +21,11 @@ export default function Projects() {
       description:
         "Smart expense tracking app with AI-based spending insights using Gemini API.",
       tech: "React • Node • MongoDB • Gemini API",
-      github: "https://github.com/Tarun-Vaghela90/AI-Powered-Personal-Expense-Tracker",
+      github:
+        "https://github.com/Tarun-Vaghela90/AI-Powered-Personal-Expense-Tracker",
     },
     {
-      title: "Taskflow - Task Management App",
+      title: "Taskflow – Task Management App",
       description:
         "Kanban-style task manager with drag-and-drop workflow and SQL-backed persistence.",
       tech: "React • Express • Sequelize • SQL",
@@ -40,92 +41,77 @@ export default function Projects() {
   ];
 
   return (
-    <section className="min-h-screen bg-background text-foreground flex items-center">
-      <div className="max-w-6xl mx-auto px-6 py-20">
+    <section className="bg-background text-foreground py-14 md:py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* HEADER */}
-        <div className="space-y-5 md:space-y-6 lg:space-y-7 mb-10 md:mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+        <div className="mb-10 space-y-3 md:space-y-5">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
             Featured <span className="text-primary">Projects</span>
           </h2>
-          <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-md lg:max-w-lg">
-            A curated selection of projects highlighting my frontend and
-            full-stack development experience.
+          <p className="hidden sm:block text-muted-foreground max-w-lg">
+            Selected projects showcasing frontend and full-stack experience.
           </p>
         </div>
 
-        {/* SCROLL WRAPPER */}
-        <div className="relative">
-          {/* LEFT FADE */}
-          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-8 bg-gradient-to-r from-background/90 via-background/60 to-transparent" />
+        {/* PROJECT GRID (AUTO ADJUST) */}
+        <div
+          className="
+            grid gap-4
+            grid-cols-1
+            sm:grid-cols-2
+            lg:grid-cols-3
+            xl:grid-cols-4
+          "
+        >
+          {projects.map((project, index) => (
+            <Card
+              key={index}
+              className="
+                bg-card
+                border border-border
+                flex flex-col
+                transition
+                hover:shadow-lg
+                hover:-translate-y-1
+              "
+            >
+              {/* HEADER */}
+              <CardHeader className="pb-3">
+                <CardTitle className="text-sm sm:text-base md:text-lg line-clamp-2">
+                  {project.title}
+                </CardTitle>
 
-          {/* RIGHT FADE */}
-          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-8 bg-gradient-to-l from-background/90 via-background/60 to-transparent" />
+                {/* TECH — hidden on mobile */}
+                <CardDescription className="hidden sm:block text-xs md:text-sm">
+                  {project.tech}
+                </CardDescription>
+              </CardHeader>
 
-          {/* SCROLL AREA */}
-          <div
-            className="
-              flex gap-3 md:gap-4
-              overflow-x-auto
-              scroll-smooth
-              snap-x snap-mandatory
-              pb-4
-              px-2
-              pr-10
-              scroll-pl-2
-              scroll-pr-10
-              [&::-webkit-scrollbar]:hidden
-            "
-          >
-            {projects.map((project, index) => (
-              <Card
-                key={index}
-                className="
-                  flex-none
-                  snap-start
-                  w-[85%]
-                  md:w-[50%]
-                  lg:w-[33.333%]
-                  xl:w-[25%]
-                  bg-card
-                  border border-border
-                  transition
-                  hover:bg-muted
-                  flex flex-col
-                "
-              >
-                <CardHeader className="space-y-1">
-                  <CardTitle className="text-lg line-clamp-1">
-                    {project.title}
-                  </CardTitle>
-                  <CardDescription className="text-muted-foreground">
-                    {project.tech}
-                  </CardDescription>
-                </CardHeader>
+              {/* CONTENT */}
+              <CardContent className="flex flex-col flex-1">
+                {/* DESCRIPTION — only desktop */}
+                <p className="hidden lg:block text-sm text-muted-foreground line-clamp-3">
+                  {project.description}
+                </p>
 
-                <CardContent className="flex flex-col flex-1">
-                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
-                    {project.description}
-                  </p>
-
-                  <div className="mt-auto pt-4">
-                    <Button
-                      variant="outline"
-                      className="w-full border border-border px-5 md:px-6 py-2.5 md:py-3 rounded-md hover:bg-muted transition"
-                      asChild
+                <div className="mt-auto pt-4">
+                  <Button
+                    variant="outline"
+                    className="w-full text-xs sm:text-sm"
+                    asChild
+                  >
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        View Source
-                      </a>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                      View Source
+                    </a>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
