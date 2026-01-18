@@ -1,7 +1,10 @@
-import imageself from "../../assets/profile.png";
-import Resume from "../../assets/Tarun_Resume.pdf";
+import { useState } from "react";
 
 export default function Herosection() {
+
+  const imageself = "profile.png";
+  const Resume = "Tarun_Resume.pdf"; 
+
   return (
     <section className="min-h-screen bg-background text-foreground flex items-center">
       <div
@@ -15,7 +18,7 @@ export default function Herosection() {
         {/* LEFT CONTENT */}
         <div className="space-y-5 md:space-y-6 lg:space-y-7">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-            Hi, I’m <span className="text-primary">Tarun</span>
+            Hi, I'm <span className="text-primary">Tarun</span>
           </h1>
 
           <h2 className="text-lg md:text-xl lg:text-2xl text-muted-foreground">
