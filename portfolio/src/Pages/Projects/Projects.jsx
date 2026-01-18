@@ -13,7 +13,7 @@ export default function Projects() {
       title: "Admission Registration Portal",
       description:
         "Full-stack MERN application with admin panel, document uploads, and application tracking.",
-      tech: "React • Node • MongoDB • Express ",
+      tech: "React • Node • MongoDB • Express",
       github: "https://github.com/Tarun-Vaghela90/Admission-Registration-Portal",
     },
     {
@@ -40,14 +40,14 @@ export default function Projects() {
   ];
 
   return (
-    <section className="py-20 bg-background text-foreground h-screen">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="min-h-screen bg-background text-foreground flex items-center">
+      <div className="max-w-6xl mx-auto px-6 py-20">
         {/* HEADER */}
-        <div className="mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold">
+        <div className="space-y-5 md:space-y-6 lg:space-y-7 mb-10 md:mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
             Featured <span className="text-primary">Projects</span>
           </h2>
-          <p className="mt-2 max-w-xl text-muted-foreground">
+          <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-md lg:max-w-lg">
             A curated selection of projects highlighting my frontend and
             full-stack development experience.
           </p>
@@ -64,7 +64,7 @@ export default function Projects() {
           {/* SCROLL AREA */}
           <div
             className="
-              flex gap-6
+              flex gap-3 md:gap-4
               overflow-x-auto
               scroll-smooth
               snap-x snap-mandatory
@@ -88,9 +88,8 @@ export default function Projects() {
                   xl:w-[25%]
                   bg-card
                   border border-border
-                  transition-all
+                  transition
                   hover:bg-muted
-                  hover:shadow-lg
                   flex flex-col
                 "
               >
@@ -109,7 +108,11 @@ export default function Projects() {
                   </p>
 
                   <div className="mt-auto pt-4">
-                    <Button variant="outline" className="w-full" asChild>
+                    <Button
+                      variant="outline"
+                      className="w-full border border-border px-5 md:px-6 py-2.5 md:py-3 rounded-md hover:bg-muted transition"
+                      asChild
+                    >
                       <a
                         href={project.github}
                         target="_blank"
