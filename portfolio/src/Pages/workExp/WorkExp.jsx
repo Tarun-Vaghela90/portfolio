@@ -22,7 +22,7 @@ const companyExpCard = [
 
   {
     CompanyName: "Wings Tech Solutions Pvt. Ltd.",
-    Role: "Software Engineer Trainee (React & Node)",
+    Role: "React & Node Trainee",
     EmploymentType: "Trainee",
     StartDate: "01/07/2025",
     EndDate: "30/09/2025",
